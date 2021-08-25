@@ -11,21 +11,41 @@
 </head>
 
 <body>
-<table>
+
+<div class="container">
+    <hr class="my-4">
+<h1>Simple COVID-19 Tracker</h1>
+    <hr class="my-4">
+<p class="lead">This application shows current number of cases from all over Za Warudo!</p>
+    <p>Made with Spring <img alt="Spring icon." src="https://spring.io/images/projects/spring-edf462fec682b9d48cf628eaf9e19521.svg" width="23" height="23"></p>
+
+<div class="p-5 mb-4 bg-light rounded-3">
+    <p class="lead">Total cases reported as of today:</p>
+    <h1 class="display-4" th:text="${totalReportedCases}"></h1>
+    <hr class="my-4">
+    <p>
+        <span>New cases reported since previous day:</span><br>
+        <span th:text="${newCases}"></span>
+    </p>
+</div>
+
+<div class="p-5 mb-4">
+<table class="table table-bordered">
     <tr>
-        <th>State</th>
-        <th>Country</th>
+        <th>Country/Region</th>
+        <th>Province/State</th>
         <th>Total Cases Reported</th>
         <th>Daily New Cases</th>
     </tr>
     <tr th:each="locationStat : ${locationStats}">
-        <td th:text="${locationStat.state}"></td>
-        <td th:text="${locationStat.country}"></td>
-        <td th:text="${locationStat.latestTotalCases}"></td>
-        <td th:text="${locationStat.dailyNew()}"></td>
+        <td th:text="${locationStat.country}">N/A</td>
+        <td th:text="${locationStat.state}">N/A</td>
+        <td th:text="${locationStat.latestTotalCases}">0</td>
+        <td th:text="${locationStat.dailyNew()}">0</td>
     </tr>
 </table>
-
+</div>
+</div>
 </body>
 
 </html>
