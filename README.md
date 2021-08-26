@@ -1,6 +1,7 @@
 # Simple COVID-19 Tracker
 #### Simple project made using Spring to track the total and new cases of COVID around the world.
 
+This project works with the help of a CSV data extracted from https://github.com/CSSEGISandData/COVID-19.
 
 <img src="https://i.imgur.com/eLX4mTP.png">
 
